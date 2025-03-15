@@ -1,5 +1,5 @@
 # RockPaperChess
-unity project about rock paper chess
+ ̶u̶n̶i̶t̶y Godot project about rock paper chess
 
 TODO
 
