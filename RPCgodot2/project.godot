@@ -10,12 +10,7 @@ config_version=5
 
 [application]
 
-config/name="RPC_godot"
-run/main_scene="uid://cy3ea3xkubo8u"
+config/name="RPCgodot2"
+run/main_scene="uid://b1qr136j5un60"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080

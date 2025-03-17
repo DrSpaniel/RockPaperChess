@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1qr136j5un60"]
+
+[ext_resource type="Texture2D" uid="uid://cyt6a1nu5rim" path="res://images/rock.png" id="1_8n18e"]
+[ext_resource type="Script" uid="uid://dxnjo8y44in50" path="res://scenes/control.gd" id="1_tjwpk"]
+[ext_resource type="Texture2D" uid="uid://icbs4nx5u20t" path="res://images/paper.png" id="2_tjwpk"]
+[ext_resource type="Texture2D" uid="uid://bkl2geqeu4ygk" path="res://images/scissors.png" id="3_lpubu"]
+[ext_resource type="Texture2D" uid="uid://0matfoc3vmn3" path="res://images/question.png" id="4_lt2xq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjwpk")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = -169.0
+offset_top = 78.0
+offset_right = 337.0
+offset_bottom = 186.0
+
+[node name="rock" type="Button" parent="BoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_8n18e")
+
+[node name="paper" type="Button" parent="BoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_tjwpk")
+
+[node name="scissors" type="Button" parent="BoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_lpubu")
+
+[node name="opponent" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -41.0
+offset_right = 43.0
+offset_bottom = 59.0
+texture = ExtResource("4_lt2xq")
+
+[node name="result" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -199.0
+offset_right = 43.0
+offset_bottom = -99.0
+texture = ExtResource("4_lt2xq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="button_down" from="BoxContainer/rock" to="." method="_on_rock_button_down"]
