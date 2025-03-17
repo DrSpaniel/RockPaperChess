@@ -37,17 +37,17 @@ icon = ExtResource("3_lpubu")
 [node name="opponent" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -57.0
-offset_top = -41.0
+offset_top = -199.0
 offset_right = 43.0
-offset_bottom = 59.0
+offset_bottom = -99.0
 texture = ExtResource("4_lt2xq")
 
 [node name="result" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -57.0
-offset_top = -199.0
-offset_right = 43.0
-offset_bottom = -99.0
+offset_left = -59.0
+offset_top = -55.0
+offset_right = 41.0
+offset_bottom = 45.0
 texture = ExtResource("4_lt2xq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
