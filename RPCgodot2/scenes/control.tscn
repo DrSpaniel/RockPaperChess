@@ -19,7 +19,7 @@ script = ExtResource("1_tjwpk")
 layout_mode = 0
 offset_left = -169.0
 offset_top = 78.0
-offset_right = 337.0
+offset_right = 163.0
 offset_bottom = 186.0
 
 [node name="rock" type="Button" parent="BoxContainer"]
@@ -53,3 +53,5 @@ texture = ExtResource("4_lt2xq")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="button_down" from="BoxContainer/rock" to="." method="_on_rock_button_down"]
+[connection signal="button_down" from="BoxContainer/paper" to="." method="_on_paper_button_down"]
+[connection signal="button_down" from="BoxContainer/scissors" to="." method="_on_scissors_button_down"]
