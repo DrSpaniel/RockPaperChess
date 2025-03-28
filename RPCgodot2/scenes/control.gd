@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_rock_button_down() -> void:
-	gameDecision(0) #0 for rock, 1 for paper, 2 for scissors
+	gameDecision(0) #0 for rock, 1 for scissors, 2 for paper
 	
 func _on_scissors_button_down() -> void:
 	gameDecision(1)
@@ -18,7 +18,7 @@ func rules(uInput, AiInput):	#this is the thing that decides who wins. takes opp
 	if (uInput == AiInput): #tie
 		$result.texture = load("res://images/question.png") #tie
 	else:
-		if((uInput+1)%3 == AiInput):
+		if((uInput+1)%3 == AiInput):	#is the users input moving up one the same as the aiinput? if so win, if same tie, is not lose. modulus is for looping back around when paper is chosen for the user.
 			$result.texture = load("res://images/right.png")
 		else:
 			$result.texture = load("res://images/wrong.png")
