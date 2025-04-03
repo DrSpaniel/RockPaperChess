@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1qr136j5un60"]
 
-[ext_resource type="Texture2D" uid="uid://cyt6a1nu5rim" path="res://images/rock.png" id="1_8n18e"]
 [ext_resource type="Script" uid="uid://dxnjo8y44in50" path="res://scenes/control.gd" id="1_tjwpk"]
-[ext_resource type="Texture2D" uid="uid://icbs4nx5u20t" path="res://images/paper.png" id="2_tjwpk"]
-[ext_resource type="Texture2D" uid="uid://bkl2geqeu4ygk" path="res://images/scissors.png" id="3_lpubu"]
-[ext_resource type="Texture2D" uid="uid://0matfoc3vmn3" path="res://images/question.png" id="4_lt2xq"]
+[ext_resource type="Texture2D" uid="uid://c3xl3ecmem4cj" path="res://imagesv2_rpc/rock.png" id="2_lpubu"]
+[ext_resource type="Texture2D" uid="uid://cdmdavi4e3hiy" path="res://imagesv2_rpc/paper.png" id="3_tjwpk"]
+[ext_resource type="Texture2D" uid="uid://do4bsbgpnmrnc" path="res://imagesv2_rpc/scissors.png" id="4_lpubu"]
+[ext_resource type="Texture2D" uid="uid://bkuluix8tbxj" path="res://imagesv2_rpc/question.png" id="5_tjwpk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,41 +17,74 @@ script = ExtResource("1_tjwpk")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = -169.0
-offset_top = 78.0
-offset_right = 163.0
-offset_bottom = 186.0
+offset_left = -552.0
+offset_top = 7.0
+offset_right = -420.0
+offset_bottom = 115.0
 
 [node name="rock" type="Button" parent="BoxContainer"]
 layout_mode = 2
-icon = ExtResource("1_8n18e")
+icon = ExtResource("2_lpubu")
 
 [node name="paper" type="Button" parent="BoxContainer"]
 layout_mode = 2
-icon = ExtResource("2_tjwpk")
+icon = ExtResource("3_tjwpk")
 
 [node name="scissors" type="Button" parent="BoxContainer"]
 layout_mode = 2
-icon = ExtResource("3_lpubu")
+icon = ExtResource("4_lpubu")
 
 [node name="opponent" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = -57.0
 offset_top = -199.0
 offset_right = 43.0
 offset_bottom = -99.0
-texture = ExtResource("4_lt2xq")
+texture = ExtResource("5_tjwpk")
 
 [node name="result" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = -59.0
 offset_top = -55.0
 offset_right = 41.0
 offset_bottom = 45.0
-texture = ExtResource("4_lt2xq")
+texture = ExtResource("5_tjwpk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="userChoice" type="BoxContainer" parent="."]
+layout_mode = 2
+offset_left = -197.0
+offset_top = 97.0
+offset_right = 195.0
+offset_bottom = 225.0
+
+[node name="scissorsButton" type="TextureButton" parent="userChoice"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("4_lpubu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="rockButton" type="TextureButton" parent="userChoice"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_lpubu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="paperButton" type="TextureButton" parent="userChoice"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("3_tjwpk")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="button_down" from="BoxContainer/rock" to="." method="_on_rock_button_down"]
 [connection signal="button_down" from="BoxContainer/paper" to="." method="_on_paper_button_down"]
 [connection signal="button_down" from="BoxContainer/scissors" to="." method="_on_scissors_button_down"]
+[connection signal="button_down" from="userChoice/scissorsButton" to="." method="_on_scissors_button_button_down"]
+[connection signal="button_down" from="userChoice/rockButton" to="." method="_on_rock_button_button_down"]
+[connection signal="button_down" from="userChoice/paperButton" to="." method="_on_paper_button_button_down"]
